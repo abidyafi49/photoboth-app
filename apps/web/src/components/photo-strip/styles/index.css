@@ -1,0 +1,808 @@
+@import "./classic.css";
+@import "./pink.css";
+@import "./midnight.css";
+@import "./retro-film.css";
+@import "./floral.css";
+@import "./neon.css";
+@import "./beach.css";
+@import "./minimal.css";
+@import "./vintage.css";
+@import "./galaxy.css";
+
+/* =========================
+   PHOTO STRIP BASE
+========================= */
+
+.photo-strip {
+  --strip-bg: #ffffff;
+  --strip-text: #222222;
+  --strip-muted: #777777;
+  --strip-border: #dddddd;
+  --frame-bg: #eeeeee;
+  --frame-border: transparent;
+  --frame-radius: 0px;
+
+  box-sizing: border-box;
+  width: 3in;
+  min-height: 3in;
+  margin: 0 auto;
+  padding: 0.14in;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.12in;
+
+  background-color: var(--strip-bg);
+  color: var(--strip-text);
+  border: 1px solid var(--strip-border);
+  border-radius: 4px;
+  text-align: center;
+  overflow: hidden;
+
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.photo-strip .strip-header {
+  padding: 0.05in 0;
+}
+
+.photo-strip .strip-title {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  line-height: 1.3;
+}
+
+.photo-strip .strip-subtitle {
+  margin: 3px 0 0;
+  color: var(--strip-muted);
+  font-size: 7px;
+  line-height: 1.4;
+}
+
+.photo-strip .strip-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1in;
+}
+
+.photo-strip .strip-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.08in;
+}
+
+.photo-strip .strip-photo-frame {
+  box-sizing: border-box;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--frame-bg);
+  border: 1px solid var(--frame-border);
+  border-radius: var(--frame-radius);
+}
+
+.photo-strip .strip-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-strip .strip-empty {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  opacity: 0.65;
+}
+
+.photo-strip .strip-footer {
+  padding: 0.05in 0;
+  color: var(--strip-muted);
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   1. CLASSIC
+========================= */
+
+.theme-classic {
+  --strip-bg: #ffffff;
+  --strip-text: #222222;
+  --strip-muted: #777777;
+  --strip-border: #222222;
+  --frame-bg: #eeeeee;
+  --frame-border: #d4d4d4;
+  --frame-radius: 0px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  border: 1px solid #222222;
+}
+
+.theme-classic .strip-header {
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 0.1in;
+}
+
+.theme-classic .strip-title {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.theme-classic .strip-subtitle {
+  font-style: italic;
+}
+
+.theme-classic .strip-row {
+  padding: 4px;
+  border: 1px solid #dddddd;
+}
+
+.theme-classic .strip-footer {
+  border-top: 1px solid #dddddd;
+  padding-top: 0.1in;
+}
+
+/* =========================
+   2. PINK
+========================= */
+
+.theme-pink {
+  --strip-bg: #fff0f5;
+  --strip-text: #8f3159;
+  --strip-muted: #b66b8b;
+  --strip-border: #f3a6c4;
+  --frame-bg: #fff9fb;
+  --frame-border: #f7c4d8;
+  --frame-radius: 8px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  border: 2px solid #f3a6c4;
+  border-radius: 12px;
+}
+
+.theme-pink .strip-header {
+  border-bottom: 1px dashed #f3a6c4;
+  padding-bottom: 0.1in;
+}
+
+.theme-pink .strip-title {
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.theme-pink .strip-subtitle {
+  font-style: italic;
+}
+
+.theme-pink .strip-row {
+  padding: 5px;
+  border: 1px solid #f7c4d8;
+  border-radius: 10px;
+  background: #fff9fb;
+}
+
+.theme-pink .strip-photo-frame {
+  border: 2px solid #f3a6c4;
+  border-radius: 7px;
+}
+
+.theme-pink .strip-footer {
+  border-top: 1px dashed #f3a6c4;
+  padding-top: 0.1in;
+}
+
+/* =========================
+   3. MIDNIGHT
+========================= */
+
+.theme-midnight {
+  --strip-bg: #111827;
+  --strip-text: #f8e7b0;
+  --strip-muted: #c3b78f;
+  --strip-border: #c9a84c;
+  --frame-bg: #1e293b;
+  --frame-border: #c9a84c;
+  --frame-radius: 0px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  border: 2px solid #c9a84c;
+}
+
+.theme-midnight .strip-header {
+  border-bottom: 1px solid #c9a84c;
+  padding-bottom: 0.1in;
+}
+
+.theme-midnight .strip-title {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.theme-midnight .strip-subtitle {
+  font-style: italic;
+}
+
+.theme-midnight .strip-row {
+  padding: 4px;
+  border: 1px solid #c9a84c;
+}
+
+.theme-midnight .strip-photo-frame {
+  border: 1px solid #c9a84c;
+}
+
+.theme-midnight .strip-footer {
+  border-top: 1px solid #c9a84c;
+  padding-top: 0.1in;
+}
+
+/* =========================
+   4. RETRO FILM
+========================= */
+
+.theme-retro-film {
+  --strip-bg: #f5e6c8;
+  --strip-text: #583b27;
+  --strip-muted: #8b684b;
+  --strip-border: #8b684b;
+  --frame-bg: #e6d2b0;
+  --frame-border: #8b684b;
+  --frame-radius: 0px;
+
+  font-family: "Courier New", monospace;
+  border: 3px solid #8b684b;
+}
+
+.theme-retro-film .strip-header {
+  border-bottom: 2px dashed #8b684b;
+  padding-bottom: 0.1in;
+}
+
+.theme-retro-film .strip-title {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.theme-retro-film .strip-subtitle {
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+.theme-retro-film .strip-row {
+  padding: 4px;
+  border: 1px dashed #8b684b;
+}
+
+.theme-retro-film .strip-photo-frame {
+  border: 2px solid #8b684b;
+}
+
+.theme-retro-film .strip-footer {
+  border-top: 2px dashed #8b684b;
+  padding-top: 0.1in;
+}
+
+/* =========================
+   5. FLORAL
+========================= */
+
+.theme-floral {
+  --strip-bg: #fffaf3;
+  --strip-text: #53634b;
+  --strip-muted: #829071;
+  --strip-border: #a6b58c;
+  --frame-bg: #f1eee3;
+  --frame-border: #b7c5a1;
+  --frame-radius: 8px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  border: 2px solid #a6b58c;
+  border-radius: 10px;
+}
+
+.theme-floral .strip-header {
+  border-bottom: 1px solid #cbd5b8;
+  padding-bottom: 0.1in;
+}
+
+.theme-floral .strip-title {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.theme-floral .strip-subtitle {
+  font-style: italic;
+}
+
+.theme-floral .strip-row {
+  padding: 5px;
+  border: 1px solid #cbd5b8;
+  border-radius: 10px;
+}
+
+.theme-floral .strip-photo-frame {
+  border: 2px solid #b7c5a1;
+  border-radius: 8px;
+}
+
+.theme-floral .strip-footer {
+  border-top: 1px solid #cbd5b8;
+  padding-top: 0.1in;
+}
+
+/* =========================
+   6. NEON
+========================= */
+
+.theme-neon {
+  --strip-bg: #171717;
+  --strip-text: #f0abfc;
+  --strip-muted: #67e8f9;
+  --strip-border: #d946ef;
+  --frame-bg: #262626;
+  --frame-border: #22d3ee;
+  --frame-radius: 2px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid #d946ef;
+  box-shadow: inset 0 0 10px #d946ef;
+}
+
+.theme-neon .strip-header {
+  border-bottom: 1px solid #22d3ee;
+  padding-bottom: 0.1in;
+}
+
+.theme-neon .strip-title {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px #d946ef;
+}
+
+.theme-neon .strip-subtitle {
+  color: #67e8f9;
+  letter-spacing: 1px;
+}
+
+.theme-neon .strip-row {
+  padding: 4px;
+  border: 1px solid #d946ef;
+}
+
+.theme-neon .strip-photo-frame {
+  border: 2px solid #22d3ee;
+  box-shadow: 0 0 5px #22d3ee;
+}
+
+.theme-neon .strip-footer {
+  border-top: 1px solid #22d3ee;
+  padding-top: 0.1in;
+  color: #67e8f9;
+}
+
+/* =========================
+   7. BEACH
+========================= */
+
+.theme-beach {
+  --strip-bg: #dff5f2;
+  --strip-text: #176b73;
+  --strip-muted: #548d8c;
+  --strip-border: #68b8b2;
+  --frame-bg: #fdf3dc;
+  --frame-border: #e6bd79;
+  --frame-radius: 12px;
+
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  border: 2px solid #68b8b2;
+  border-radius: 14px;
+}
+
+.theme-beach .strip-header {
+  border-bottom: 1px dashed #68b8b2;
+  padding-bottom: 0.1in;
+}
+
+.theme-beach .strip-title {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.theme-beach .strip-subtitle {
+  font-style: italic;
+}
+
+.theme-beach .strip-row {
+  padding: 5px;
+  border: 1px solid #e6bd79;
+  border-radius: 12px;
+  background: #fdf3dc;
+}
+
+.theme-beach .strip-photo-frame {
+  border: 2px solid #e6bd79;
+  border-radius: 10px;
+}
+
+.theme-beach .strip-footer {
+  border-top: 1px dashed #68b8b2;
+  padding-top: 0.1in;
+}
+
+/* =========================
+   8. MINIMAL
+========================= */
+
+.theme-minimal {
+  --strip-bg: #ffffff;
+  --strip-text: #171717;
+  --strip-muted: #777777;
+  --strip-border: #d4d4d4;
+  --frame-bg: #f4f4f4;
+  --frame-border: #e5e5e5;
+  --frame-radius: 0px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #d4d4d4;
+}
+
+.theme-minimal .strip-header {
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 0.1in;
+}
+
+.theme-minimal .strip-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.theme-minimal .strip-subtitle {
+  font-size: 6px;
+  letter-spacing: 0.5px;
+}
+
+.theme-minimal .strip-row {
+  padding: 0;
+  border: none;
+}
+
+.theme-minimal .strip-photo-frame {
+  border: 1px solid #e5e5e5;
+}
+
+.theme-minimal .strip-footer {
+  border-top: 1px solid #eeeeee;
+  padding-top: 0.1in;
+}
+
+/* =========================
+   9. VINTAGE
+========================= */
+
+.theme-vintage {
+  --strip-bg: #ead7b7;
+  --strip-text: #593e2b;
+  --strip-muted: #896c50;
+  --strip-border: #896c50;
+  --frame-bg: #d9c29f;
+  --frame-border: #896c50;
+  --frame-radius: 0px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  border: 3px double #896c50;
+}
+
+.theme-vintage .strip-header {
+  border-bottom: 3px double #896c50;
+  padding-bottom: 0.1in;
+}
+
+.theme-vintage .strip-title {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.theme-vintage .strip-subtitle {
+  font-style: italic;
+}
+
+.theme-vintage .strip-row {
+  padding: 5px;
+  border: 1px solid #896c50;
+}
+
+.theme-vintage .strip-photo-frame {
+  border: 2px solid #896c50;
+}
+
+.theme-vintage .strip-footer {
+  border-top: 3px double #896c50;
+  padding-top: 0.1in;
+}
+
+/* =========================
+   10. GALAXY
+========================= */
+
+.theme-galaxy {
+  --strip-bg: #111827;
+  --strip-text: #e9d5ff;
+  --strip-muted: #c4b5fd;
+  --strip-border: #8b5cf6;
+  --frame-bg: #1e1b4b;
+  --frame-border: #a78bfa;
+  --frame-radius: 6px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid #8b5cf6;
+  border-radius: 8px;
+}
+
+.theme-galaxy .strip-header {
+  border-bottom: 1px solid #8b5cf6;
+  padding-bottom: 0.1in;
+}
+
+.theme-galaxy .strip-title {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px #a78bfa;
+}
+
+.theme-galaxy .strip-subtitle {
+  color: #c4b5fd;
+  font-style: italic;
+}
+
+.theme-galaxy .strip-row {
+  padding: 4px;
+  border: 1px solid #8b5cf6;
+  border-radius: 8px;
+}
+
+.theme-galaxy .strip-photo-frame {
+  border: 1px solid #a78bfa;
+  border-radius: 5px;
+}
+
+.theme-galaxy .strip-footer {
+  border-top: 1px solid #8b5cf6;
+  padding-top: 0.1in;
+}
+
+/* =========================
+   THEME DECORATIONS
+========================= */
+
+.photo-strip {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Classic: garis elegan dan ornamen bintang */
+.theme-classic .strip-header::before {
+  content: "✦  ✧  ✦";
+  display: block;
+  margin-bottom: 4px;
+  color: #a68a55;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.theme-classic .strip-footer::after {
+  content: "✦";
+  display: block;
+  margin-top: 3px;
+  color: #a68a55;
+}
+
+/* Pink: hati dan aksen romantis */
+.theme-pink .strip-header::before {
+  content: "♡  ♥  ♡";
+  display: block;
+  margin-bottom: 4px;
+  color: #ec4899;
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+
+.theme-pink .strip-footer::after {
+  content: "♡  ♥  ♡";
+  display: block;
+  margin-top: 4px;
+  color: #ec4899;
+  letter-spacing: 3px;
+}
+
+.theme-pink .strip-row {
+  box-shadow: 0 0 0 2px #fbcfe8;
+}
+
+/* Midnight: bintang dan bingkai emas */
+.theme-midnight .strip-header::before {
+  content: "✦  ✧  ★  ✧  ✦";
+  display: block;
+  margin-bottom: 5px;
+  color: #facc15;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.theme-midnight .strip-footer::after {
+  content: "✧  ✦  ✧";
+  display: block;
+  margin-top: 4px;
+  color: #facc15;
+  letter-spacing: 3px;
+}
+
+.theme-midnight .strip-row {
+  box-shadow: inset 0 0 0 1px #c9a84c;
+}
+
+/* Retro Film: label film dan perforasi */
+.theme-retro-film .strip-header::before {
+  content: "▶  ANALOG MEMORIES  ◀";
+  display: block;
+  margin-bottom: 5px;
+  color: #8b684b;
+  font-family: "Courier New", monospace;
+  font-size: 7px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.theme-retro-film .strip-row {
+  position: relative;
+  border-style: dashed;
+}
+
+.theme-retro-film .strip-footer::after {
+  content: "●  ●  ●  ●  ●";
+  display: block;
+  margin-top: 4px;
+  color: #8b684b;
+  font-size: 5px;
+  letter-spacing: 4px;
+}
+
+/* Floral: bunga dan daun */
+.theme-floral .strip-header::before {
+  content: "❀  ✿  ❀";
+  display: block;
+  margin-bottom: 4px;
+  color: #829b65;
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+
+.theme-floral .strip-footer::after {
+  content: "❧  ❀  ❧";
+  display: block;
+  margin-top: 4px;
+  color: #829b65;
+  font-size: 10px;
+}
+
+/* Neon: aksen futuristik */
+.theme-neon .strip-header::before {
+  content: "◆  ◇  ◆  ◇  ◆";
+  display: block;
+  margin-bottom: 5px;
+  color: #22d3ee;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-shadow: 0 0 6px #22d3ee;
+}
+
+.theme-neon .strip-row {
+  box-shadow: 0 0 5px #d946ef;
+}
+
+.theme-neon .strip-footer::after {
+  content: "// END TRANSMISSION //";
+  display: block;
+  margin-top: 4px;
+  color: #22d3ee;
+  font-size: 6px;
+  letter-spacing: 1px;
+}
+
+/* Beach: matahari dan ombak */
+.theme-beach .strip-header::before {
+  content: "☼  ☼  ☼";
+  display: block;
+  margin-bottom: 4px;
+  color: #e6a94f;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+.theme-beach .strip-row {
+  box-shadow: 0 2px 0 #e6bd79;
+}
+
+.theme-beach .strip-footer::after {
+  content: "〰  〰  〰";
+  display: block;
+  margin-top: 4px;
+  color: #319c9b;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+/* Minimal: garis dan titik kecil */
+.theme-minimal .strip-header::before {
+  content: "—  •  —";
+  display: block;
+  margin-bottom: 5px;
+  color: #777777;
+  font-size: 8px;
+  letter-spacing: 3px;
+}
+
+.theme-minimal .strip-footer::after {
+  content: "•";
+  display: block;
+  margin-top: 4px;
+  color: #777777;
+}
+
+/* Vintage: ornamen klasik */
+.theme-vintage .strip-header::before {
+  content: "❦  ❧  ❦";
+  display: block;
+  margin-bottom: 4px;
+  color: #896c50;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.theme-vintage .strip-row {
+  outline: 1px solid #896c50;
+  outline-offset: -3px;
+}
+
+.theme-vintage .strip-footer::after {
+  content: "❦  EST. 2026  ❦";
+  display: block;
+  margin-top: 4px;
+  color: #896c50;
+  font-size: 6px;
+  letter-spacing: 1px;
+}
+
+/* Galaxy: bintang dan kilauan */
+.theme-galaxy .strip-header::before {
+  content: "✦  ⋆  ✧  ★  ✧  ⋆  ✦";
+  display: block;
+  margin-bottom: 5px;
+  color: #c4b5fd;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px #a78bfa;
+}
+
+.theme-galaxy .strip-row {
+  box-shadow: 0 0 5px #8b5cf6;
+}
+
+.theme-galaxy .strip-footer::after {
+  content: "⋆  ✦  ⋆  ✦  ⋆";
+  display: block;
+  margin-top: 4px;
+  color: #c4b5fd;
+  letter-spacing: 3px;
+}
